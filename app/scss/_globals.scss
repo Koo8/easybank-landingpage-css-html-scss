@@ -1,0 +1,166 @@
+:root {
+    font-size: 100%; // let user control the zoom level of font-size in the browser. 
+    box-sizing: border-box;
+    // css native custom variables 
+    --color-darkblue: hsl(233, 26%, 24%);
+    --color-limegreen: hsl(136, 65%, 51%);
+    --color-brightcyan: hsl(192, 70%, 51%);
+
+    --color-grayishblue: hsl(233, 8%, 62%);
+    --color-lightgrayishblue: hsl(220, 16%, 96%);
+    --color-verylightgray: hsl(0, 0%, 98%);
+    --color-white: hsl(0, 0%, 100%);
+
+    --color-lnbg: linear-gradient(to right, var(--color-limegreen), var(--color-brightcyan));
+
+    // BK --> NOTE: var() can't be used inside media query declaration
+    // --bk-40em: 640px;
+
+    --trans: all .4s ease-in-out;
+
+    --font-sm: 1rem;
+    --font-md: 1.5rem;
+    --font-lg: 2.1rem;
+    --font-2lg: 2.45rem;
+    --font-xlg: 3.25rem;
+
+    --lineheight-sm: 1.5rem;
+    --lineheigjt-md: 2.3rem;
+    --lineheight-lg: 2.75rem;
+    --lineheight-xlg: 3.5rem;
+}
+
+//let all elements inherit the box-sizing 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// reset, add google font in body
+body {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-sm);
+    font-family: 'Public Sans', sans-serif;
+    line-height: var(--lineheight-sm);
+    font-weight: 300;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: var(--font-2lg);
+    font-weight: 400; // browser default 700
+    line-height: var(--lineheight-lg);
+    @media (min-width:36em) {
+        font-size: var(--font-xlg);
+        line-height: var(--lineheight-xlg);
+    }
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 300;
+    font-size: var(--font-lg);
+    line-height: var(--lineheight-lg);
+}
+h3 {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: var(--font-md);
+    line-height: var(--lineheight-md);
+}
+
+p {
+    @media (min-width:36em) {
+        font-size: var(--font-md);
+        line-height: var(--lineheight-lg);
+      
+    }
+}
+// todo: tag is less important than class, change this to .section is better
+section, 
+.section {    
+    max-width: 88rem ;
+    margin: auto;
+    // background-color: red;
+    // &:first-child {
+    //     // padding-top: 4rem;
+    //     background-color: rgb(142, 222, 135);
+    // }
+    padding-bottom: 1rem;
+    > * {
+        // margin-bottom: 3rem;
+        > * {
+            margin-bottom: 1.5rem;
+            @media (min-width:48em) {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+a {
+    text-decoration: none;
+    color: var(--color-grayishblue);
+}
+
+.container {
+    padding-left:1.5rem;
+    padding-right: 1.5rem;
+    @media (min-width: 36em) {
+        padding-left:2.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+//helper classes
+.flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// components
+.cta-btn {
+    display: inline-block;
+    color: var(--color-white);
+    background: var(--color-lnbg);
+    padding: 0.6rem 1.5rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    font-size: var(--font-sm);
+    transition:var(--trans);
+    &:hover {
+        opacity: .75;
+        
+    }
+}
+
+
+// visibility helper class
+.hide-for-mobile {   
+    // var(--bk-40em) can't be as media query declaration
+    @media (max-width: 36em) {
+        display: none !important;
+        // visibility: hidden;// still there, taking the space
+    }
+}
+
+.hide-for-desktop {   
+    @media (min-width: 36em) {
+        display: none !important;
+    }
+}
+// for mobile menu and overlay
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+// for display changes due to screen size

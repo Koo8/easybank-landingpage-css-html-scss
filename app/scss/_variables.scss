@@ -1,0 +1,11 @@
+// This is preprocessor variables, it needs preprocessing, instead, 
+//use native css custom variables don't need preprocessor, it looks like this --color-primary:red;
+// primary colors
+$darkblue: hsl(233, 26%, 24%);
+$limegreen: hsl(136, 65%, 51%);
+$brightcyan: hsl(192, 70%, 51%);
+// neutral colors
+$grayishblue: hsl(233, 8%, 62%);
+$lightgrayishblue: hsl(220, 16%, 96%);
+$verylightgray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);

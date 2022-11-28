@@ -1,0 +1,13 @@
+* This is a challenge from frontendmentor.io called easybank landing page. 
+freecodecamp has a youtube https://www.youtube.com/watch?v=aoQ6S1a32j8
+
+* for setting up the project:
+    download the file from the website, keep images folder, index.html and style-guide.md in the project folder
+    create an 'app' folder with 'js' and 'scss' subfolders. style.scss is the main scss file, for importing other partial scss files
+
+* build from mobile design first. 
+
+* Standard website width 2022 : 
+Desktop: Above 1440px. Laptop: 992px to 1440px. Tablet: 576px to 992px. Mobile: Up to 576px.
+
+* TODO: this project has a problem in _article.scss for :hover state with parent div, all children elements jumping with the cursor. 

@@ -1,0 +1,38 @@
+.feature {
+    background-color: var(--color-lightgrayishblue);
+    text-align: center;
+    padding-top: 3rem;
+    &__top {
+        @media (min-width:36em){
+            max-width: 65%;
+            text-align: left;
+            padding-bottom: 1rem;
+        }
+    }
+    &__cont {
+        @media (min-width: 36em){
+            display: flex;
+            
+        }        
+    }
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding:1rem 1.5rem;
+        
+    }
+    &__icon {
+        margin-bottom: 1rem;
+
+    }
+    &__p {
+       text-align: left; 
+       @media (min-width:36em) {
+        text-align: center;
+       }
+}
+
+
+
+}

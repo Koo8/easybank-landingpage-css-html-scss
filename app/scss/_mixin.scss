@@ -1,0 +1,28 @@
+// 640px, 1024px, 1400px
+$bk: (
+    // hide: small or show: big
+    'medium': '40em', // use em for cross browser stability
+    'large': '64em',
+    'xlarge': '87.5em'
+);
+
+// $bk-down: (
+//     // hide:big or show:small
+    
+//     'large': '87.4375em' // 1399px
+//     'medium': '63.9375em' // 1023px
+//     'small':'39.9375em', // 639px
+// );
+
+// TODO: min vs max how to use them 
+@mixin going-up ($size) {
+    @media (min-width: map-get($bk,$size)) {
+        @content;
+    }    }
+
+@mixin going-down ($size) {
+    @media (max-width: map-get($bk, $size)) {
+        @content;
+    }
+
+}

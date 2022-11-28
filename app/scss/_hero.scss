@@ -1,0 +1,77 @@
+.hero {
+    @media (min-width: 36em) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    background-color: var(--color-verylightgray);
+
+    &__img {
+        background-image: url(/images/bg-intro-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 17.5rem;
+
+        @media (min-width: 20em) {
+            background-position: 1rem;
+        }       
+
+        @media (min-width: 36em) {
+            background-image: url(/images/bg-intro-desktop.svg);
+            flex: 3;
+            height: 36rem;
+            margin-bottom: 0;
+            background-size: 330%;
+            background-position: -5rem -2rem;
+        }
+        @media (min-width: 43em) {
+            background-image: none;  // by moving this bg-image from itself to its::before, so that its width can be munipulated to expand beyond the padding of the border.
+        }
+       
+        &::before {
+            @media (min-width:43em) {
+                content: '';
+                background-image: url(/images/bg-intro-desktop.svg);
+                position: absolute;
+                height: 120%;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-position: center bottom;                
+            }
+        }
+            
+        &::after {
+            content: '';
+            background-image: url(/images/image-mockups.png);
+            position: absolute;
+            height: 120%;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: 90%;
+            background-position: center bottom;
+            @media (min-width:36em) {
+                background-position: 0rem -3rem;
+                background-size: 180%;
+            }
+            @media (min-width: 43em){
+                background-size: 120%;
+            }
+            @media (min-width: 60em) {
+                background-position: 6rem -6rem;
+                background-size: 100%;
+            }
+        }
+    }
+
+    &__text {
+        flex: 2;
+        text-align: center;
+        padding-top: 3rem;
+
+        @media (min-width: 36em) {
+            text-align: left;
+        }
+    }
+}
